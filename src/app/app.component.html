@@ -2,3 +2,51 @@
 <p>
   Start editing to see some magic happen :)
 </p>
+<div>
+  <h1>Candidates</h1>
+  <table>
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+        <td>Gender</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.id}}</td>
+        <td>{{employee.first_name}}</td>
+        <td>{{employee.last_name}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.gender}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<h1>Add Candidates</h1>
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">  
+     
+    <p>  
+        <label for="name">  Id:</label>  
+        <input type="text" id="name" name="name" formControlName="name" class="form-control">  
+      </p> 
+    <p>  
+      <label for="name"> First Name:</label>  
+      <input type="text" id="first_name" name="first_name" formControlName="first_name" class="form-control">  
+    </p> 
+    <p>  
+        <label for="name"> Last Name:</label>  
+        <input type="text" id="last_name" name="last_name" formControlName="last_name" class="form-control">  
+      </p> 
+      <p>  
+          <label for="name"> Email:</label>  
+          <input type="text" id="email" name="email" formControlName="email" class="form-control">  
+        </p>  
+        <p>  
+            <label for="name"> Gender:</label>  
+            <input type="text" id="gender" name="gender" formControlName="gender" class="form-control">  
+        </p> 
+          <button type="submit" class="btn btn-success">Submit</button>  
+</div>
