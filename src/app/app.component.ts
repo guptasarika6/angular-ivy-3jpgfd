@@ -1,6 +1,7 @@
 import { Component, VERSION } from '@angular/core';
 import * as employeeData from './assets/employee.json';
 import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 interface Employee {
   id: Number;
@@ -19,7 +20,7 @@ export class AppComponent {
   name = 'Angular ' + VERSION.major;
 
   employeeForm: FormGroup;
-
+  searchText = '';
   constructor(private fb: FormBuilder) {
     this.employeeForm = this.fb.group({
       id: '',

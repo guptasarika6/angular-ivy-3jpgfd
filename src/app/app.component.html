@@ -14,8 +14,9 @@
         <td>Gender</td>
       </tr>
     </thead>
+    Search Text <input type="text" [(ngModel)]="searchText" name="searchText">
     <tbody>
-      <tr *ngFor="let employee of employees">
+      <tr *ngFor="let employee of employees | filter:searchText">
         <td>{{employee.id}}</td>
         <td>{{employee.first_name}}</td>
         <td>{{employee.last_name}}</td>
